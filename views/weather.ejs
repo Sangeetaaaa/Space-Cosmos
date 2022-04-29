@@ -1,0 +1,30 @@
+<%- include("partials/header") -%>
+
+<div class="container" style="padding-top: 100px;">
+  <div class="">
+    <img style="    height: 250px; width: 100%;" src="https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/static/home/thespacedevs/images/g4l_patch.svg" alt="">
+    <br><br>
+    <h3 class="colorfull-text">Know your city current weather with space-cosmos</h3>
+</div>
+  <form class="" style="padding: 10px;" action="/weather" method="post">
+    <h5 class=" mb-3   mt-5 font-weight-normal">Enter Your City Name : </h5>
+    <input type="text"  class="form-control" placeholder="First Name" name="cityName" required autofocus>
+    <button class="btn btn-primary btn-md mt-3" type="submit">Go</button>
+
+
+  
+      <% if (weatherDescription) { %>
+          <div class="mt-5">
+              <p>Currently weather is <%= weatherDescription %></p>
+              <h3>Today's Temperature in <%= cityName %> is <%= weatherTemp %></h3>
+              <img src="<%= imgUrl %>" alt="">
+          </div>
+      <% } %>
+
+      <% if (!rightData) { %>
+          <div class="mt-5">
+            <h3><%= cityName %> is not a city Name</h3>
+        </div>
+      <% } %>
+</div>
+<%- include("partials/footer") -%>

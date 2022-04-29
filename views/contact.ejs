@@ -1,0 +1,96 @@
+<%- include("partials/header") -%>
+
+
+<br><br><br><br>
+<br><br>
+  <div class="container">
+    <h3>Do you Love Space ?</h3>
+    <h5>Have you heard any crazy shuff ? Wanna share with me, your New Astrophile Friend 😊</h5>
+    <h5 class="contact-heading-h3">Have an idea ? and Want to work togather</h5>
+  </div>
+  
+
+  <div class="container">
+    <!-- <h2 class="mt-5 spacing">I AM LOOKING FOR AN OPPORTUNITY</h2>
+    <p class="mb-5">Send me a message.</p> -->
+    <form id="myForm">
+        <div class="form-group text-left">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Your Name">
+          </div>
+        <div class="form-group  text-left">
+          <label for="exampleInputEmail1">Email</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" name="gmail" aria-describedby="emailHelp" placeholder="Your Email">
+        </div>
+        <div class="form-group text-left">
+            <label for="exampleFormControlTextarea1">Message</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Your Message" name="message" rows="4"></textarea>
+        </div>
+        <p class="mt-3 success__message">We got your message. We'll come back to you as soon as I get some free time</p>
+        <p class="mt-3 failure__message">Something went wrong</p>
+        <button type="submit" class="btn btn-primary mb-5">Send</button>
+      </form>
+      
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+//         function validateForm(e) {
+//     var name = document.forms["myForm"]["name"].value;
+//     var email = document.forms["myForm"]["email"].value
+//     var phone = document.forms["myForm"]["phone"].value;
+
+//     if (name === "") {
+//       alert("Name must be filled out");
+//       e.preventDefault();
+//     } else if (email === "" && phone === "") {
+//         alert('Email or Phone no must be filled out');
+//         e.preventDefault();
+//     }
+//     else {
+//         sendEmail(e);
+//     }
+//   }
+
+
+function changeNavbar () {
+           let scrollValue = window.scrollY
+           let navbar = document.querySelector(".navbar")
+           if(scrollValue <= 550) {
+               navbar.classList.remove('navbar-black')
+           } else {
+               navbar.classList.add('navbar-black')
+           }
+        }
+
+        window.addEventListener('scroll', changeNavbar)
+
+
+
+$('#myForm').on('submit', function(event) {
+event.preventDefault(); // prevent reload
+
+var formData = new FormData(this);
+formData.append('service_id', 'service_t6acl5s');
+formData.append('template_id', 'template_4s3lnrr');
+formData.append('user_id', 'KN1DzKmyBb-m77dxt');
+
+$.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
+    type: 'POST',
+    data: formData,
+    contentType: false, // auto-detection
+    processData: false // no need to parse formData to string
+}).done(function() {
+    document.querySelector('.success__message').style.display = 'block';
+}).fail(function(error) {
+    document.querySelector('.failure__message').style.display = 'block';
+});
+});
+
+
+</script>
+  
+<%- include("partials/footer") -%>

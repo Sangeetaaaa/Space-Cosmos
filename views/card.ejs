@@ -1,0 +1,49 @@
+<%- include("partials/header") -%>
+
+<div class="text-left back-arrow mt-5 ml-5">
+  <a href="/explore">
+    <img src="images/back-arrow.png" class="mr-2" style="height: 40px; width: 40px;" alt="">
+  </a>  Explore Page
+</div>
+
+<!-- <p><a href="/add" class="add-new-card">Add Your Knowledge about space</a></p> -->
+<div class="container">
+  <br><br><br><br>
+  <div class="">    
+    <h2>Welcome to Our Space Blog</h2>
+    <br><br>
+    <div class="row">
+        <div class="col-md-4 col-lg-4">
+            <img style="    height: 350px; width: 100%;" src="https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/static/home/thespacedevs/images/snapifeatures/blogs.jpg" alt="">
+        </div>
+        <div class="col-md-6 text-left col-lg-6">
+            <p>The Spaceflight News API, or SNAPI for short, started because Derk Weijers wanted an app where he could easily check the latest spaceflight news. As a Linux Engineer by profession, he had some experience with programming, but never had he developed a mobile app. At the start of 2018, he started following an online course for mobile app development (React Native). While doing so, he also started planning the app, and soon came to the conclusion that he would first need to build an API as a uniform interface to get data into his app. The Spaceflight News API was born.</p>
+        </div>
+    </div>
+</div>
+  <br>
+  <div class="card-deck">
+      <div class="row"  style="margin-right: 0;">
+       <% for (i = cards.length - 1; i >= 0; i--) { %>
+           <div class="">
+             <div class="card">
+                 <div class="card-coloums">
+                 <div class="card-body">
+                 <h5 class="card-title"><%= cards[i].title %></h5>
+                 <a href="/card/<%= i %>">read</a>
+                 <small class="ml-3" style="color: black" >By Sangeeta</small>
+                 <small class="ml-3" style="color: black">31 Jan</small>
+              </div>
+               </div>
+               </div>
+           </div>
+    <% } %>
+      </div></div>
+      
+    </div>
+
+
+
+
+
+<%- include("partials/footer") -%>

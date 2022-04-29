@@ -1,0 +1,53 @@
+<%- include("partials/header") -%>
+<div class="text-left back-arrow mt-5 ml-5">
+    <a href="/explore">
+      <img src="images/back-arrow.png" class="mr-2" style="height: 40px; width: 40px;" alt="">
+    </a>  Explore
+  </div>
+
+  
+<br><br><br>
+<div class="container mt-5">
+    <div class="">    
+        <h2>Daily Report By Nasa</h2>
+        <br><br>
+        <div class="row">
+            <div class="col-md-4 col-lg-4">
+                <img style="    height: 250px; width: 100%;" src="https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/static/home/thespacedevs/images/snapifeatures/reports.jpg" alt="">
+            </div>
+            <div class="col-md-6 text-left col-lg-6">
+                <p>The Spaceflight News API, or SNAPI for short, started because Derk Weijers wanted an app where he could easily check the latest spaceflight news. As a Linux Engineer by profession, he had some experience with programming, but never had he developed a mobile app. At the start of 2018, he started following an online course for mobile app development (React Native). While doing so, he also started planning the app, and soon came to the conclusion that he would first need to build an API as a uniform interface to get data into his app. The Spaceflight News API was born.</p>
+            </div>
+        </div>
+    </div>
+
+<br><br><br>
+    <!-- --card-bg-color: #1E1E1E; -->
+
+    <% for (let i=0; i<spaceReports.length ; i++) { %>
+        <div class="space-news-board mt-5" style="background-color: #1E1E1E; padding: 20px;">
+            <br>
+            <h4><%= spaceReports[i].title%></h4>
+            <br>
+            <div class="row">
+                <div class="col-md-6 col-lg-6">
+                    <img style="height: 250px; width: auto;" src="<%= spaceReports[i].imageUrl %>" alt=""><br><br>
+                </div>
+                <div class="col-md-6 col-lg-6 text-left">
+                    <p><%= spaceReports[i].summary%></p>
+                    <div class="text-right">
+                        <a href="<%= spaceReports[i].url%>">Read more</a><br>
+                        <i class="mr-0">Report by: <%= spaceReports[i].newsSite%></i>
+                        <br>
+                        <small style="letter-spacing: 2px;">
+                            <i>publisted at: <%= spaceReports[i].publishedAt%></i><br>
+                            <i>updated at: <%= spaceReports[i].updatedAt%></i>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% } %>
+</div>
+
+<%- include("partials/footer") -%>

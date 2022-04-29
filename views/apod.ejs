@@ -1,0 +1,38 @@
+<%- include("partials/header") -%>
+
+<div class="text-left back-arrow mt-5 ml-5">
+    <a href="/">
+      <img src="images/back-arrow.png" class="mr-2" style="height: 40px; width: 40px;" alt="">
+    </a>  Home
+  </div>
+
+<br><br>
+
+<div class="container">
+    <br><br><br>
+    <h1 class="colorfull-text">ASTRONOMY PICTURE OF THE DAY - By NASA
+    </h1>
+    <br><br>
+    <h3> <%= nasaAPOD.title %></h3>
+    <p><%= nasaAPOD.date %></p>
+
+    <br>
+    <% if (nasaAPOD.media_type == 'image') { %>
+        <img style="border-radius: 3%;" class="apod-img" src='<%=nasaAPOD.hdurl%>' alt="">
+    <% } %> 
+    <br><br>
+    <p><%= nasaAPOD.explanation %></p>
+    <small><i><%= nasaAPOD.copyright %></i></small>
+    
+
+
+    <br><br><br><br><br><br>
+    <div class="text-left">
+        <h5 class="colorfull-text">What is APOD akka Astronomy Picture of the day ?</h5>
+        <p>Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer.</p>
+    </div>
+
+</div>
+
+
+<%- include("partials/footer") -%>
