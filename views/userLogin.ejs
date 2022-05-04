@@ -1,0 +1,59 @@
+<%- include("partials/header") -%>
+
+<%- include("partials/header") -%>
+
+<div class="container">
+    <br><br><br>
+    <h2 class="colorfull-text">Welcome to Users Page</h2>
+
+    <div>
+        <h4>Add Blog Post</h4>
+        <p>Note: Blog Post should be related to space. Incase if it is not Admins will remove your blog post</p>
+    </div>
+
+    <br><br>
+    <div class="text-left">
+
+        <form action="/addbyuser" method="post">
+
+            <div class="row">
+                <div class="col-lg-6"><br><br>
+                    <label class="form-label">Your Name</label><br>
+                    <input type="text" class="form-control" name="username" placeholder="Add Your Name" required>
+                </div>
+
+                <div class="col-lg-6"><br><br>
+                    <label class="form-label">Email Id</label><br>
+                    <input type="email" class="form-control" name="email" placeholder="Add Your Email Id" required>
+                </div>
+
+                <div class="col-lg-6"><br><br>
+                    <label class="form-label">Title</label><br>
+                    <input type="text" class="form-control" name="title" placeholder="Add suitable Title for the Blog post" required>
+                </div>
+
+                <div class="col-lg-6"><br><br>
+                    <label class="form-label">Source</label><br>
+                    <input type="text" class="form-control" name="source" placeholder="Add Source of the blog post" required>
+                </div>
+                
+            </div>
+
+            <div> <br><br>
+                <label class="form-label">Content</label><br>
+                <textarea name="content" class="form-control" cols="40" rows="5" placeholder="Add Content for the blog post" required></textarea>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg mt-5">Post</button>
+            </div>
+
+        </form>
+    </div>
+
+    <br><br><br>
+</div>
+
+
+
+<%- include("partials/footer") -%>

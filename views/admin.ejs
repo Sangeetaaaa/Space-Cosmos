@@ -7,7 +7,6 @@
     <div>
         <button class="btn btn-dark mr-3">Add</button>
         <button class="btn btn-dark mr-3">Delete</button>
-        <button class="btn btn-dark">Update</button>
     </div>
 
     <br><br>
@@ -18,31 +17,19 @@
             <div class="row">
                 <div class="col-lg-6"><br><br>
                     <label class="form-label">Title</label><br>
-                    <input type="text" class="form-control" name="title" placeholder="Add suitable Title for the Blog post">
+                    <input type="text" class="form-control" name="title" placeholder="Add suitable Title for the Blog post" required>
                 </div>
 
                 <div class="col-lg-6"><br><br>
-                    <label class="form-label">Image</label> <br>
-                    <input type="file" class="" name="image" placeholder="Select image for the Blog post">
+                    <label class="form-label">Source</label><br>
+                    <input type="text" class="form-control" name="source" placeholder="Add Source of the blog post" required>
                 </div>
                 
             </div>
 
-            <div class="row">
-                <div class="col-lg-6"><br><br>
-                    <label class="form-label">Source</label><br>
-                    <input type="text" class="form-control" name="source" placeholder="Add Source of the blog post">
-                </div>
-    
-                <div class="col-lg-3"><br><br>
-                    <label class="form-label">Date</label><br>
-                    <input type="date" class="form-control" name="date" placeholder="Add date">
-                </div>
-            </div>
-
             <div> <br><br>
                 <label class="form-label">Content</label><br>
-                <textarea name="content" class="form-control" cols="40" rows="5" placeholder="Add Content for the blog post"></textarea>
+                <textarea name="content" class="form-control" cols="40" rows="5" placeholder="Add Content for the blog post" required></textarea>
             </div>
 
             <div class="text-center">
@@ -78,6 +65,30 @@
 
 
         </table>
+    </div>
+
+
+    <br><br>
+    <div>
+        <h3>Users</h3>
+
+        <div class="data__Table">
+            <table >
+    
+                <th>Sr. No</th>
+                <th>Username</th>
+                <th>gmail</th>
+                <% for (i = 0; i <= users.length - 1; i++) { %>
+                <tr>
+                    <td><%= i+ 1  %></td>
+                    <td><%= users[i].username %></td>
+                    <td><%= users[i].email %></td>
+                </tr>
+                <% } %>
+    
+    
+            </table>
+
     </div>
 </div>
 

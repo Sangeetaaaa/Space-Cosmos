@@ -4,7 +4,7 @@
   <div class="">
     <img style="    height: 250px; width: 100%;" src="https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/static/home/thespacedevs/images/g4l_patch.svg" alt="">
     <br><br>
-    <h3 class="colorfull-text">Know your city current weather with space-cosmos</h3>
+    <h3 class="colorfull-text">Know your city's current weather with space-cosmos</h3>
 </div>
   <form class="" style="padding: 10px;" action="/weather" method="post">
     <h5 class=" mb-3   mt-5 font-weight-normal">Enter Your City Name : </h5>
@@ -16,7 +16,7 @@
       <% if (weatherDescription) { %>
           <div class="mt-5">
               <p>Currently weather is <%= weatherDescription %></p>
-              <h3>Today's Temperature in <%= cityName %> is <%= weatherTemp %></h3>
+              <h3>Today's Temperature in <%= cityName %> is <%= weatherTemp %>°C</h3>
               <img src="<%= imgUrl %>" alt="">
           </div>
       <% } %>

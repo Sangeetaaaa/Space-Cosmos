@@ -1,9 +1,10 @@
 <%- include("partials/header") -%>
 
 <div class="container fullpage">
+  <p>By <%= card.by %> |  <%= card.date %></p>
   <h1 class="fullpage-heading"><%= card.title %></h1>
   <p><%= card.content %></p>
-  <span>I got this Information from </span><a href="http://www.<%= card.source %>"><%= card.source %></a>
+  <span>Source: </span><a href="http://www.<%= card.source %>"><%= card.source %></a>
 </div>
 
 <%- include("partials/footer") -%>
